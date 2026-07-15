@@ -8,42 +8,50 @@
 </head>
 <body>
 
-<header>
-  <h1>مكتبة الكتب الدراسية</h1>
-  <p>اختار الصف والكتب، والطلب بيتجهز خلال 10 إلى 15 يوم.</p>
+<header class="hero">
+  <div>
+    <h1>📚 طلب الكتب الدراسية</h1>
+    <p>اختار الصف، حدّد الكتب والكميات، وسيتم التواصل معك عند جاهزية الطلب.</p>
+  </div>
+  <a class="whatsapp" href="https://wa.me/201000000000" target="_blank">تواصل واتساب</a>
 </header>
 
-<main>
-  <section class="card">
-    <h2>اختار الصف الدراسي</h2>
-    <select id="gradeSelect">
-      <option value="">-- اختار الصف --</option>
-    </select>
+<main class="layout">
+
+  <section class="content">
+    <h2>اختر الصف الدراسي</h2>
+    <div id="grades" class="grades"></div>
+
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="🔍 ابحث عن كتاب..." />
+    </div>
+
+    <h2 id="booksTitle">الكتب المتاحة</h2>
+    <div id="booksList" class="books"></div>
   </section>
 
-  <section class="card">
-    <h2>الكتب المتاحة</h2>
-    <div id="booksList"></div>
-  </section>
+  <aside class="sidebar">
+    <section class="invoice card">
+      <h2>🧾 الفاتورة</h2>
+      <div id="invoice"></div>
+      <h3 id="total">الإجمالي: 0 جنيه</h3>
+    </section>
 
-  <section class="card invoice">
-    <h2>الفاتورة</h2>
-    <div id="invoice"></div>
-    <h3 id="total">الإجمالي: 0 جنيه</h3>
-  </section>
+    <section class="customer card">
+      <h2>👤 بيانات العميل</h2>
+      <input id="customerName" placeholder="اسم العميل" />
+      <input id="phone" placeholder="رقم واتساب" />
+      <textarea id="notes" placeholder="ملاحظات"></textarea>
 
-  <section class="card">
-    <h2>بيانات العميل</h2>
+      <p class="notice">
+        ⏳ مدة تجهيز الطلب من 10 إلى 15 يوم، وسيتم التواصل معكم عند جاهزية الطلب.
+      </p>
 
-    <input id="customerName" placeholder="اسم العميل" />
-    <input id="phone" placeholder="رقم التليفون / واتساب" />
-    <textarea id="notes" placeholder="ملاحظات"></textarea>
+      <button onclick="submitOrder()">تأكيد الطلب</button>
+      <p id="message"></p>
+    </section>
+  </aside>
 
-    <p class="notice">مدة تجهيز الطلب من 10 إلى 15 يوم، ولما يجهز هنكلمك.</p>
-
-    <button onclick="submitOrder()">تأكيد الطلب</button>
-    <p id="message"></p>
-  </section>
 </main>
 
 <script src="script.js"></script>
