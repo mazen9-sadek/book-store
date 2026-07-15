@@ -4,67 +4,167 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f7fb;
-  color: #222;
+  font-family: Tahoma, Arial, sans-serif;
+  background: #f1f5f9;
+  color: #111827;
 }
 
-header {
+.hero {
   background: linear-gradient(135deg, #2563eb, #7c3aed);
   color: white;
-  text-align: center;
-  padding: 35px 15px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-main {
-  max-width: 900px;
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+.hero p {
+  margin: 0;
+  opacity: 0.95;
+}
+
+.whatsapp {
+  background: #22c55e;
+  color: white;
+  padding: 13px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.layout {
+  max-width: 1200px;
   margin: 25px auto;
-  padding: 10px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
 }
 
-.card {
+.card,
+.grade,
+.book {
   background: white;
-  padding: 20px;
-  margin-bottom: 18px;
   border-radius: 18px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
-select, input, textarea {
+.grades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.grade {
+  padding: 18px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s;
+  text-align: center;
+  font-weight: bold;
+}
+
+.grade:hover,
+.grade.active {
+  border-color: #2563eb;
+  transform: translateY(-3px);
+  color: #2563eb;
+}
+
+.search-box input,
+.customer input,
+.customer textarea {
   width: 100%;
   padding: 13px;
   margin: 8px 0;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
   font-size: 16px;
 }
 
+.books {
+  display: grid;
+  gap: 14px;
+}
+
 .book {
+  padding: 16px;
   display: flex;
   justify-content: space-between;
+  gap: 12px;
   align-items: center;
-  background: #f8fafc;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 12px;
+}
+
+.book h3 {
+  margin: 0 0 6px;
+}
+
+.price {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .qty button {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border: none;
+  border-radius: 10px;
   background: #2563eb;
   color: white;
-  border-radius: 8px;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
 }
 
 .qty span {
-  display: inline-block;
-  width: 30px;
+  min-width: 28px;
   text-align: center;
   font-weight: bold;
+}
+
+.sidebar {
+  position: sticky;
+  top: 15px;
+  height: fit-content;
+}
+
+.card {
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.invoice p {
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#total {
+  background: #dcfce7;
+  color: #166534;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.notice {
+  background: #fff7ed;
+  color: #9a3412;
+  padding: 12px;
+  border-radius: 12px;
+  line-height: 1.7;
 }
 
 button {
@@ -78,14 +178,21 @@ button {
   cursor: pointer;
 }
 
-.notice {
-  background: #fff7ed;
-  padding: 12px;
-  border-radius: 10px;
-  color: #9a3412;
+#message {
+  color: #16a34a;
+  font-weight: bold;
 }
 
-#message {
-  font-weight: bold;
-  color: #16a34a;
+@media (max-width: 850px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .hero h1 {
+    font-size: 25px;
+  }
 }
