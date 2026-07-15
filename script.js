@@ -1,4 +1,4 @@
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx9fvG8uehMBdRqaMv_RY-81q9JlutY11bcpP3mLJb3750PN1mFgbKmOdRvwU4sSmDQ/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz73DkEn1YxOA66Sc3Lrpq2DMEjOl3LkwQHDd0pNFgx_oxO4jSrv9gI6jAxr6o9SGpW/exec";
 
 const booksData = {
   "الصف الأول الابتدائي": [
